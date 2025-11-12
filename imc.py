@@ -13,6 +13,8 @@ def calculer_imc(poids_kg: float, taille_m: float) -> float:
         ValueError: Si la taille est inférieure ou égale à zéro.
     """
 
+    if poids_kg <= 0:
+        raise ValueError("Le poids doit être un nombre positif.")
     if taille_m <= 0:
         raise ValueError("La taille doit être un nombre positif.")
     return poids_kg / (taille_m ** 2)
